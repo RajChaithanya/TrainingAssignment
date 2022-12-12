@@ -10,7 +10,7 @@ public class ValidationServiceImpl implements ValidationService{
 
 	@Override
 	public boolean validatePhonenumber(String phNum) {
-		if(phNum.matches("[0-9]{10}")) {
+		if(phNum.matches("^(\\+91[\\-\\s]?)?[0]?(91)?[789]\\d{9}$")){
 			return true;
 		}else {
 		return false;
