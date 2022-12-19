@@ -92,6 +92,38 @@ public class CustomerDTO {
 		}
 
 
+		public CustomerDTO(String name, String phone, String email, String gender, String city) {
+			super();
+			this.name = name;
+			this.phone = phone;
+			this.email = email;
+			this.gender = gender;
+			this.city = city;
+		}
+
+
+		public CustomerDTO() {
+			super();
+		}
+
+
+		public CustomerDTO(Integer id) {
+			super();
+			this.id = id;
+		}
+
+
+		public CustomerDTO(Integer id, String name, String phone, String email, String gender, String city) {
+			super();
+			this.id = id;
+			this.name = name;
+			this.phone = phone;
+			this.email = email;
+			this.gender = gender;
+			this.city = city;
+		}
+
+
 		
 
 

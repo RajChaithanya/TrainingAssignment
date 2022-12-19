@@ -28,18 +28,21 @@ public class CustomerController {
    @Autowired
    ModelMapper mapper;
 	
+   String error = "error";
+   
 	@PostMapping("/insert")
 	public String insertCustomer(@RequestBody CustomerDTO customerDTO) {
 		 String message = "";
 		 try {
-			 
+			 System.out.println("data");
 			 Customer obj = mapper.map(customerDTO, Customer.class);
+			 System.out.println(obj);
 			 customerRepo.save(obj);
 			 message = "Inserted Successfully";
 			 
 		 }catch(Exception e) {
 			
-			 message = "error"+e; 
+			 message = error+e; 
 		 }
 		 return message;
 	}
@@ -56,7 +59,7 @@ public class CustomerController {
 			 
 		 }catch(Exception e) {
 			
-			message = "error"+e; 
+			message = error+e; 
 		 }
 		 return message;
 	}
@@ -68,14 +71,14 @@ public class CustomerController {
 		
 		 try {
 			  
-			 List<Customer> LstCustomer = customerRepo.findAll();
-	            for(Customer obj : LstCustomer ) {
+			 List<Customer> lstCustomer = customerRepo.findAll();
+	            for(Customer obj : lstCustomer ) {
 	                allCustomer.add(mapper.map(obj,CustomerDTO.class));
 	            
 	            }
 			 
 		 }catch(Exception e) {
-			System.out.print("error"+e);
+			System.err.print(error+e);
 			 
 		 }
 		 
@@ -94,7 +97,7 @@ public class CustomerController {
 			
 		}catch(Exception e) {
 			
-			message = "error"+e;
+			message =error+e;
 			
 		}
 		

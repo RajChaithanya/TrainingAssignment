@@ -1,0 +1,22 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: springboot-customermanagemnet
+spec:
+  selector:
+    matchLabels:
+      app: springboot-customermanagemnet
+      version: v01
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: springboot-customermanagemnet
+        version: v01
+    spec:
+      containers:
+      - name: springboot-customermanagemnet
+        image: spring-k8s-customermanagement
+        imagePullPolicy: IfNotPresent
+        ports: 
+        - containerPort: 80

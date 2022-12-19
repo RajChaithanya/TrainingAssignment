@@ -1,13 +1,13 @@
 package com.training.customermanagmentsystem.entities;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 
 @Entity
@@ -20,7 +20,7 @@ public class Customer {
     parameters = {
     @Parameter(name = "sequence_name", value = "Customer_SEQ"),
     @Parameter(name="optimizer", value="hilo"),
-    @Parameter(name = "initial_value", value = "4"),
+    @Parameter(name = "initial_value", value = "1"),
     @Parameter(name = "increment_size", value = "1") }
     )
 	@Column(name = "id")
@@ -112,10 +112,5 @@ public class Customer {
 		return "Customer [id=" + id + ", name=" + name + ", phone=" + phone + ", email=" + email + ", gender=" + gender
 				+ ", city=" + city + "]";
 	}
-
-
-
-	
-	
 
 }
